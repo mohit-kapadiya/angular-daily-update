@@ -1,0 +1,68 @@
+
+<!-- 
+In one way binding data flows from one direction. Either from view to component or from component to view.
+
+types of one-way binding.
+
+From Component to View
+
+1) interpolation -> {{}}
+2) Property binding (class binding , style binding)  -> []
+
+-->
+
+<!-- interpolation -->
+<h3>My name is {{firstName}} {{lastName}}</h3><br>
+
+<!-- Property binding -->
+<h3 [innerText]="title"></h3>
+
+<button type="button" class="btn btn-primary" style="margin-left: 10px;"
+[disabled]="isDisable">save</button>
+
+<!-- class binding -> NgClass -->
+
+<div [ngClass]=" flag ? 'primary' : 'secondary'">
+   <h3>This example of ngClass</h3>
+</div>
+
+<div [ngClass]="'flex1 flex2'">
+    <h3>This example of Two or More NgClass</h3>
+ </div>
+
+
+ <div [ngClass]="['flex1', 'flex2']">
+    <h3>This example of ngClass with arrays</h3>
+ </div>
+
+ <div [ngClass]="{'flex1':true, 'flex2':false}">
+    <h3>This example of ngClass with arrays</h3>
+ </div>
+
+<!--  Style binding -->
+
+<h3 [style.color]="'red'">
+    This example of Style Binding</h3>
+<h3 [style.background-color]="flag === true ?'yellow' : 'red'"
+[style.font-size.px]="'26'">
+        This example of Style Binding</h3>
+
+<!-- 
+ngStyle
+The style binding is the easy way to set a single style of a HTML element. 
+Although you can use it to set several inline styles as shown in the above example, 
+the better way is to use the ngStyle directive. -->
+
+<h3 [ngStyle]="{'color':'purple' , 'font-size':'30px' , 'font-weight':'bold'}">
+multiple ngStyle example
+</h3>
+
+<div [ngStyle]="{'font-size.px': size}">Change my size</div>
+
+<!-- 
+From View To Component 
+
+* event binding
+-->
+
+<button type="button" class="btn btn-secondary" style="margin-left: 10px;" (click)="clickMe()">Click Me!</button>

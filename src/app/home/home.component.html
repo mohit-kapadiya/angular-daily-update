@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <h5>Angular Course</h5>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+<div class="card">
+    <div class="row">
+        <div class="col-sm-2">
+            <h6>Data Binding</h6>
+            <ul>
+                <li>
+                    <a [routerLink]="['/data-binding/one-way-binding']">One Way Data Binding</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/data-binding/two-way-binding']">Two Way Data Binding</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-2">
+            <h6>Change & NgModelChange</h6>
+            <ul>
+                <li>
+                    <a [routerLink]="['/change-event-example']">Change & NgModelChange</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

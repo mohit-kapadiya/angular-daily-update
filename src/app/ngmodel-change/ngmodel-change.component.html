@@ -1,0 +1,30 @@
+<h3 class="mt">Change and NgModelChange Example</h3>
+
+<p class="mt">Change event example</p>
+<!-- change  -->
+<input type="text" class="form-control mt w150" (change)="changeInput($event)">
+
+<p class="mt">ngModelChange example (show output in console)</p>
+<!-- 
+ngModelChange -->
+<input class="form-control mt w150"  (ngModelChange)="lastNameChanged($event)" [(ngModel)]="lastName" />
+
+<!-- 
+
+NgModelChange    
+
+* NgModelChange is Angular specific event
+* We must use the ngModelChange along with the ngModel directive
+* ngModelChange event passes new value
+* ngModelChange will trigger with each input change
+
+
+Change
+
+* Change is a DOM Event and has nothing to do with the Angular.
+* You can use change event on <input>, <select>, and <textarea> form elements.
+* Change event passes event parameter, Use the target.value to access the new value
+* Change event fires when you remove the focus from input text after changing the content. 
+
+-->
+
