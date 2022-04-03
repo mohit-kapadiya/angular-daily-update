@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { DataBindingModule } from './data-binding/data-binding.module';
 import { HomeComponent } from './home/home.component';
 import { NgmodelChangeComponent } from './ngmodel-change/ngmodel-change.component';
+import { ParentComponent } from './add-child-component/parent/parent.component';
+import { ChildComponent } from './add-child-component/child/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NgmodelChangeComponent
+    NgmodelChangeComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

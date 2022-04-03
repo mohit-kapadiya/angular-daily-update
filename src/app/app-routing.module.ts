@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ParentComponent } from './add-child-component/parent/parent.component';
 import { HomeComponent } from './home/home.component';
 import { NgmodelChangeComponent } from './ngmodel-change/ngmodel-change.component';
 
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path :'change-event-example',
     component : NgmodelChangeComponent
+  },
+  {
+    path :'parent',
+    component : ParentComponent
   },
 ];
 
