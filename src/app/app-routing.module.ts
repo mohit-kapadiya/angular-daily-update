@@ -26,6 +26,11 @@ const routes: Routes = [
     path :'parent',
     component : ParentComponent
   },
+  {
+    path: 'directive',
+    loadChildren: () => import('./directive/directive.module').then(m => m.DirectiveModule)
+  },
+
 ];
 
 @NgModule({
