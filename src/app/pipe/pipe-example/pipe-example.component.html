@@ -1,0 +1,55 @@
+<h1>Pipe Example</h1>
+
+<ul>
+    {{toDate}}
+    <li>date  : {{toDate | date}}</li>
+
+   <!--  passing argument -->
+    <li>{{toDate | date :'medium'}}</li>
+
+    <!-- chaining Pipe -->
+    <li>{{toDate | date | uppercase}}</li>
+</ul>
+
+<!-- Built-In-Pipe -->
+
+<h3>Example of Datepipe</h3>
+<ul>
+    <li>medium : {{toDate | date:'medium'}} </li>
+    <li>short : {{toDate | date:'short'}} </li>
+    <li>fullDate : {{toDate | date:'fullDate'}} </li>
+    <li>longDate : {{toDate | date:'longDate'}} </li>
+    <li>mediumDate : {{toDate | date:'mediumDate'}} </li>
+    <li>shortDate : {{toDate | date:'shortDate'}} </li>
+    <li>mediumTime : {{toDate | date:'mediumTime'}} </li>
+    <li>dd-MM-y : {{toDate | date:'dd-MM-y'}} </li>
+    <li>dd-MM-yy HH:mm : {{toDate | date:'dd-MM-yy HH:mm'}} </li>
+</ul>
+
+<h3>UpperCasePipe & LowerCasePipe</h3>
+<ul>
+    <li>Uppercase :{{msg | uppercase}} </li>
+    <li>Lowercase :{{msg | lowercase}}</li>
+</ul>
+
+<h3>CurrencyPipe</h3>
+<ul>
+    <li>
+        Example 1 :{{cur | currency }}
+    </li>
+    <li>
+        Example 2 :{{cur | currency :'INR' : true:'4.2-2' }}
+    </li>
+</ul>
+
+<h3>Custom Pipe</h3>
+<p>Celsius to Fahrenheit :</p>
+<input type="text"  [(ngModel)]="celcius">
+ {{celcius | temp:'F'}} 
+
+<p>Fahrenheit to Celsius :</p>
+<input type="text"  [(ngModel)]="fahrenheit">
+{{fahrenheit | temp :'C'}}
+
+
+              

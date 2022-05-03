@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { NgmodelChangeComponent } from './ngmodel-change/ngmodel-change.component';
 import { ParentComponent } from './add-child-component/parent/parent.component';
 import { ChildComponent } from './add-child-component/child/child.component';
+import { PipeExampleComponent } from './pipe/pipe-example/pipe-example.component';
+import { TempPipe } from './pipe/custom-pipe/temp.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ChildComponent } from './add-child-component/child/child.component';
     HomeComponent,
     NgmodelChangeComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    PipeExampleComponent,
+    TempPipe
   ],
   imports: [
     BrowserModule,

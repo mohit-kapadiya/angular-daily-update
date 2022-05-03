@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'directive',
     loadChildren: () => import('./directive/directive.module').then(m => m.DirectiveModule)
   },
+  {
+    path :'pipe',
+    loadChildren: () => import('./pipe/pipe/pipe.module').then(m => m.PipeModule)
+  }
 
 ];
 
