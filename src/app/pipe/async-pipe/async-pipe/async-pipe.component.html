@@ -1,0 +1,42 @@
+<h1>
+    Async Pipe Example
+</h1>
+
+<p>
+   <b>* use with interpolation</b> 
+</p>
+<p>{{obsValue | async}}</p>
+
+<p>
+  <b>* use with *ngIf</b>  
+</p>
+
+<div *ngIf="(obsValue | async); else elseBlock">
+    {{obsValue | async}}
+</div>
+
+<ng-template #elseBlock>
+    Observable is loading. Please wait 
+</ng-template>
+
+<p>
+   <b>* use ngIf “as” syntax</b> 
+</p>
+
+<div *ngIf="(obsValue | async) as value; else elseBlock">
+    {{value}}
+</div>
+
+<ng-template #elseBlock>
+    Observable is loading. Please wait 
+</ng-template>
+
+<p>
+    <b>* use async pipe with *ngFor</b>
+</p>
+
+<ul>
+    <li *ngFor="let item of (hounds | async)">{{item.title}}</li>
+</ul>
+
+

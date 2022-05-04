@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { PipeRoutingModule } from './pipe-routing.module';
 
@@ -9,6 +9,9 @@ import { PipeRoutingModule } from './pipe-routing.module';
   imports: [
     CommonModule,
     PipeRoutingModule
+  ],
+  providers:[
+    DatePipe
   ]
 })
 export class PipeModule { }

@@ -11,6 +11,9 @@ import { ParentComponent } from './add-child-component/parent/parent.component';
 import { ChildComponent } from './add-child-component/child/child.component';
 import { PipeExampleComponent } from './pipe/pipe-example/pipe-example.component';
 import { TempPipe } from './pipe/custom-pipe/temp.pipe';
+import { AsyncPipeComponent } from './pipe/async-pipe/async-pipe/async-pipe.component';
+import { HttpClientModule } from '@angular/common/http';
+import { KeyValuePipeComponent } from './pipe/key-value-pipe/key-value-pipe/key-value-pipe.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,16 @@ import { TempPipe } from './pipe/custom-pipe/temp.pipe';
     ParentComponent,
     ChildComponent,
     PipeExampleComponent,
-    TempPipe
+    TempPipe,
+    AsyncPipeComponent,
+    KeyValuePipeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DataBindingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
