@@ -1,0 +1,32 @@
+<app-child-counter
+[count]="clickCounter"
+(countChanged)="counterClick($event)"
+#child
+></app-child-counter>
+
+<div class="container">
+    <h4>Counter Value : {{clickCounter}}</h4>
+</div>
+
+<div class="container">
+    <h4 style="color:blue;"> * Using local variable for access the child element refrence</h4>
+    <button (click)="child.increment()" class="btn btn-primary">Increment</button> &nbsp;
+    <button (click)="child.decrement()" class="btn btn-success">decrement</button>
+    <h4>Counter Value : {{child?.count}}</h4>
+</div>
+
+<div class="container">
+    <h4 style="color:blue;"> * Using view-child decorator</h4>
+    <button (click)="increment()" class="btn btn-primary">Increment</button> &nbsp;
+    <button (click)="decrement()" class="btn btn-success">decrement</button>
+</div>
+
+<!-- 
+* The local variable approach is simple and easy. But it is limited because the parent-child wiring must be done entirely within the parent template.
+  The parent component itself has no access to the child.  
+
+* The local variable approach is simple and easy. But it is limited because the parent-child wiring must be done entirely within the parent template. 
+  The parent component itself has no access to the child.
+
+-->
+

@@ -1,0 +1,17 @@
+
+<div class="container">
+    <h1>ngOnChanges</h1>
+    <p>
+        Message : <input type='text' [(ngModel)]='message'
+        class="form-control"> 
+    </p>
+    <p> Code : <input type='text' [(ngModel)]='code'
+        class="form-control"></p>
+    <p> Name : <input type='text' [(ngModel)]='name'
+        class="form-control"></p>
+
+  <p><button (click)="updateCustomer()" class="btn btn-primary">Update </button>
+</div>
+
+<app-customer
+[message]="message" [customer]="customer"></app-customer>

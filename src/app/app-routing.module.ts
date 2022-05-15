@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ParentComponent } from './add-child-component/parent/parent.component';
 import { HomeComponent } from './home/home.component';
 import { NgmodelChangeComponent } from './ngmodel-change/ngmodel-change.component';
 
@@ -23,17 +22,21 @@ const routes: Routes = [
     component : NgmodelChangeComponent
   },
   {
-    path :'parent',
-    component : ParentComponent
-  },
-  {
     path: 'directive',
     loadChildren: () => import('./directive/directive.module').then(m => m.DirectiveModule)
   },
   {
     path :'pipe',
     loadChildren: () => import('./pipe/pipe/pipe.module').then(m => m.PipeModule)
-  }
+  },
+  {
+    path :'component-communication',
+    loadChildren: () => import('./component-communication/component-communication.module').then(m => m.ComponentCommunicationModule)
+  },
+  {
+    path :'forms',
+    loadChildren: () => import('./forms/forms.module').then(m => m.AngularFormsModule)
+  },
 
 ];
 

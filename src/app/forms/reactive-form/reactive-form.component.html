@@ -1,0 +1,109 @@
+<div class="container contact">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="contact-info">
+                <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
+                <h2>Angular</h2>
+                <h4>Reactive Form</h4>
+            </div>
+        </div>
+        <div class="col-md-9">
+        <form  [formGroup]="userform">
+            <div class="contact-form">
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="fname">First Name:</label>
+                  <div class="col-sm-10">          
+                    <input type="email" class="form-control"
+                    formControlName="firstName"
+                    [ngClass]="{'is-invalid': f['firstName'].errors && (f['firstName'].touched || f['firstName'].dirty), 'is-valid':f['firstName'].valid}"  
+                    placeholder="First Name">
+                 </div>
+                 <div *ngIf="f['firstName'].touched && f['firstName'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['firstName'].errors && f['firstName'].errors['required']">* First Name is required.</div>
+                    <div *ngIf="f['firstName'].errors && f['firstName'].errors['minlength']">* First Name should be 3 character.</div>
+                </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="lname">Last Name:</label>
+                  <div class="col-sm-10">  
+                    <input type="email" class="form-control" placeholder="Last Name"
+                    formControlName="lastName"
+                    [ngClass]="{'is-invalid': f['lastName'].errors && (f['lastName'].touched || f['lastName'].dirty), 'is-valid':f['lastName'].valid}"  
+                    >
+                    <div *ngIf="f['lastName'].touched && f['lastName'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['lastName'].errors && f['lastName'].errors['required']">* Last Name is required.</div>
+                        <div *ngIf="f['lastName'].errors && f['lastName'].errors['minlength']">*Last Name should be 3 character.</div>
+                    </div>
+
+                   </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="email">Email:</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" placeholder="Email Address" formControlName="email"
+                    [ngClass]="{'is-invalid': f['email'].errors && (f['lastName'].touched || f['email'].dirty), 'is-valid':f['email'].valid}" >
+                    <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['email'].errors && f['email'].errors['required']">* Email is required.</div>
+                        <div *ngIf="f['email'].errors && f['email'].errors['email']"> * Please, enter valid email address.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="comment">Gender:</label>
+                  <div class="col-sm-10">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" formControlName="gender" id="male" value="male">
+                        <label class="form-check-label" for="male">Male</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" formControlName="gender" id="female" value="female">
+                        <label class="form-check-label" for="female">Female</label>
+                      </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                      <div class="form-check form-check-inline">
+                        <label class="control-label col-sm-2" for="comment"
+                        >Married</label>
+                        <input type="checkbox" class="form-check-input" id="married"
+                        formControlName="married" >
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="comment">Country:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="country"  formControlName="country"
+                        [ngClass]="{'is-invalid': f['country'].errors && (f['country'].touched || f['country'].dirty), 'is-valid':f['country'].valid}" >
+                            <option  *ngFor="let item of countries" [value]="item?.value">{{item?.name}}</option>
+                          </select>
+                          <div *ngIf="f['country'].touched && f['country'].invalid" class="alert alert-danger">
+                            <div *ngIf="f['country'].errors && f['country'].errors['required']">* Country is required.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="comment">Password:</label>
+                    <div class="col-sm-10">
+                        <input type="password" formControlName="password" class="form-control"
+                        placeholder="Password"
+                        [ngClass]="{'is-invalid': f['password'].errors && (f['password'].touched || f['password'].dirty), 'is-valid':f['password'].valid}" >
+                        <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                            <div *ngIf="f['password'].errors && f['password'].errors['required']">* Password is required.</div>
+                            <div *ngIf="f['password'].errors && f['password'].errors['pattern']"> * Password should be  At least one lowercase , one uppercase
+                                , one numeric , one special symbol , length should be greater than or equal to 8 and less or equal to 16.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">        
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default" 
+                    (click)="submit()">Submit</button>
+                  </div>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>    

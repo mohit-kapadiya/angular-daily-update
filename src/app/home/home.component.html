@@ -1,15 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-    <h5>Angular Course</h5>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</nav>
-<div class="card">
-    <h4>COMPONENT</h4>
-    <div class="row">
-        <div class="col-sm-4">
-            <h6>Data Binding</h6>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+        </button>
+        <h1>Angular Course</h1>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true">
+        <mat-nav-list>
+            <h3>Data Binding</h3>
             <ul>
                 <li>
                     <a [routerLink]="['/data-binding/one-way-binding']">One Way Data Binding</a>
@@ -18,36 +18,19 @@
                     <a [routerLink]="['/data-binding/two-way-binding']">Two Way Data Binding</a>
                 </li>
             </ul>
-        </div>
-        <div class="col-sm-4">
-            <h6>Change & NgModelChange</h6>
+            <h3>Change & NgModelChange</h3>
             <ul>
                 <li>
                     <a [routerLink]="['/change-event-example']">Change & NgModelChange</a>
                 </li>
             </ul>
-        </div>
-        <div class="col-sm-4">
-            <h6>Add Child Component</h6>
-            <ul>
-                <li>
-                    <a [routerLink]="['/parent']">Add Child Component</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <h4>DIRECTIVE , PIPE</h4>
-    <div class="row">
-        <div class="col-sm-4">
-            <h6>Directive</h6>
+            <h3>Directive</h3>
             <ul>
                 <li>
                     <a [routerLink]="['/directive/directive-example']">Directive</a>
                 </li>
             </ul>
-        </div>
-        <div class="col-sm-4">
-            <h6>Pipe</h6>
+            <h3>Pipe</h3>
             <ul>
                 <li>
                     <a [routerLink]="['/pipe/pipe-example']">Pipe</a>
@@ -59,6 +42,41 @@
                     <a [routerLink]="['/pipe/key-value-pipe']">Key value Pipe</a>
                 </li>
             </ul>
+            <h3>Component Communication</h3>
+            <ul>
+                <li>
+                    <a [routerLink]="['/component-communication/parent']">parent-child-relationship</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/component-communication/shop-keeper']">ngOnChanges</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/component-communication/parent-counter']">Counter</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/component-communication/viewc-parent']">View Child</a> 
+                </li>
+                <li>
+                    <a [routerLink]="['/component-communication/view-chill-parent']">View children</a> 
+                </li>
+                <li>
+                    <a [routerLink]="['/component-communication/sib-parent']">Sibling Component Comm</a> 
+                </li>
+            </ul>
+            <h3>Forms</h3>
+            <ul>
+                <li>
+                    <a [routerLink]="['/forms/angular-form']">Template driven Form</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/forms/reactive-form']">Reactive Form (Model-driven form)</a>
+                </li>
+            </ul>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height : 88vh;">
+            <img src="/assets/image/wallpaper.jpg" alt="image">
         </div>
-    </div>
-</div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

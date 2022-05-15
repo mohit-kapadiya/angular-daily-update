@@ -1,0 +1,11 @@
+<!-- This technique uses an Event Emitter to emit an event from a child component to it’s parent using @Output(). 
+The parent component listens to the emitter using event binding, once fired it will bind the input from the emitter to the target child component using input binding. -->
+
+<div class="container">
+
+    <h1>
+        communication between two sibling components.
+    </h1>
+    <app-sib-child1 (event)="eventClick($event)"></app-sib-child1>
+    <app-sib-child2 [name]="name"></app-sib-child2>
+</div>
